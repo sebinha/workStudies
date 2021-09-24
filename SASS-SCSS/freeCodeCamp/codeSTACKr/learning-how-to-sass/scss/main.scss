@@ -1,0 +1,66 @@
+@import './resets.scss';
+@import './variables.scss';
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+
+@mixin flexCenter($direction) {
+    width: 80% - 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+    
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+    
+}
+
+body {
+    background: $primary-color;
+    color: $text-color;
+}
+
+.main{
+    @include flexCenter(row);
+    justify-content: center;
+    align-items: center;
+
+    #{&}__paragraph1{
+        font-weight: weight(regular);
+
+        &:hover{
+            color:pink;
+        }
+    }
+
+    #{&}__paragraph2{
+        @extend .main__paragraph1;
+
+        &:hover{
+            color:$accent-color
+        }
+    }
+
+
+
+    @include mobile{
+        flex-direction: column;
+    }
+}
+
+.light {
+    @include theme($light-theme: true)
+}
+
