@@ -1,0 +1,5 @@
+Abrir terminal e na pasta root, colocar "npm init -y" para instalar o package json.
+Após isso para instalar o live server no arquivo basta colocar "npm i -s live-server""
+Entrar no package.json e colocar no scripts "start":"live-server"
+
+executar tsc -w na pasta root faz com que ele fique em modo Watching, atualizando qualquer mudança e criando arquivo JS quando um TS é criado
