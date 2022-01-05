@@ -1,4 +1,4 @@
-export default function ContadorDisplay(props) {
+export function ContadorDisplay(props) {
   return (
     <div
       style={{
@@ -10,11 +10,12 @@ export default function ContadorDisplay(props) {
         width: "100px",
         borderRadius: "50px",
         backgroundColor: "black",
+        margin: "1rem",
         color: "white",
         fontSize:"2rem"
       }}
     >
-      {props.x}
+      {props.display}
     </div>
   );
 }

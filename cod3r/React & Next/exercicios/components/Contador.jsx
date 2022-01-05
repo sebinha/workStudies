@@ -20,7 +20,7 @@ export default function Contador(props) {
       }}
     >
       <h1>Contador</h1>
-      <ContadorDisplay x={x}/>
+      <ContadorDisplay display={x}/>
       <br />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <button onClick={subtraction}>-</button>
